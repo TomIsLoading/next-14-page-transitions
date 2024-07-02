@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { TransitionLink } from "../utils/TransitionLink";
 
@@ -10,6 +9,20 @@ export const FlipNav = () => {
         Sign in
       </button>
     </nav>
+  );
+};
+
+const NavLeft = () => {
+  return (
+    <div className="flex items-center gap-6">
+      <Link href="/">
+        <Logo />
+      </Link>
+      <TransitionLink href="/about">About</TransitionLink>
+      <TransitionLink href="/community">Community</TransitionLink>
+      <TransitionLink href="/pricing">Pricing</TransitionLink>
+      <TransitionLink href="/company">Company</TransitionLink>
+    </div>
   );
 };
 
@@ -33,19 +46,5 @@ const Logo = () => {
         stopColor="#000000"
       ></path>
     </svg>
-  );
-};
-
-const NavLeft = () => {
-  return (
-    <div className="flex items-center gap-6">
-      <TransitionLink href="/">
-        <Logo />
-      </TransitionLink>
-      <TransitionLink href="/about">About</TransitionLink>
-      <TransitionLink href="/community">Community</TransitionLink>
-      <TransitionLink href="/pricing">Pricing</TransitionLink>
-      <TransitionLink href="/company">Company</TransitionLink>
-    </div>
   );
 };

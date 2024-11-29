@@ -3,10 +3,10 @@ import Link, { LinkProps } from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
 
-interface TransitionLinkProps extends LinkProps {
-  children: React.ReactNode;
-  href: string;
-}
+type TransitionLinkProps = LinkProps & { href: string } & Omit<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    keyof LinkProps
+  >;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
